@@ -1,13 +1,17 @@
 import { createTheme, ThemeOptions, ThemeProvider } from '@mui/material';
 // import React{ useMemo } from 'react';
-import React, { useMemo } from 'react';
+import React, { lazy, Suspense, useMemo } from 'react';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useSelector } from './redux/store'
-import Coba from './component/Coba';
 import typography from './theme/typography';
 import breakpoints from './theme/breakpoints';
 import shadows, { customShadows } from './theme/shadows';
 import palette from './theme/palette';
+// import List from './component/Pokemon/List';
 // import getTheme from './theme/theme';
+
+const Pokemon = lazy(() => import('./pages/pokemon'));
+const Home = lazy(() => import('./pages/home'));
 
 function App() {
   const { mode } = useSelector((state)=>state.theme);
@@ -26,7 +30,14 @@ function App() {
   const theme = createTheme(themeOptions);
   return (
     <ThemeProvider theme={theme}>
-      <Coba />
+      <Router>
+        <Suspense fallback={null}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/pokemon" element={<Pokemon/>} />
+          </Routes>
+        </Suspense>
+      </Router>
     </ThemeProvider>
   )
 }

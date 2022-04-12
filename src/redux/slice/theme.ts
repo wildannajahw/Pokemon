@@ -4,7 +4,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { dispatch } from '../store';
 // const mode = <PaletteMode>('light');
 const initialState = {
-  mode: 'light',
+  mode: 'dark',
 };
 
 const slice = createSlice({

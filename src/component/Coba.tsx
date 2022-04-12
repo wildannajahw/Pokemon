@@ -14,7 +14,7 @@ function Coba() {
     <Box
       sx={{
         display: 'flex',
-        width: '100%',
+        // width: '100%',
         alignItems: 'center',
         justifyContent: 'center',
         bgcolor: 'background.default',
