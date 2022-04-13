@@ -22,6 +22,7 @@ export default function PokemonCardLoader({ length }: PokemonCardLoaderProps) {
           display: 'flex',
           flexDirection: 'column',
           minHeight: '50px',
+          justifyContent: 'center'
          }}
         >
           <Skeleton variant="text" width='50%'/>

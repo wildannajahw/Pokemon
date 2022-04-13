@@ -1,5 +1,4 @@
 import { createTheme, ThemeOptions, ThemeProvider } from '@mui/material';
-// import React{ useMemo } from 'react';
 import React, { lazy, Suspense, useMemo } from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useSelector } from './redux/store'
@@ -7,8 +6,7 @@ import typography from './theme/typography';
 import breakpoints from './theme/breakpoints';
 import shadows, { customShadows } from './theme/shadows';
 import palette from './theme/palette';
-// import List from './component/Pokemon/List';
-// import getTheme from './theme/theme';
+import PageLoader from './component/PageLoader';
 
 const Home = lazy(() => import('./pages/home'));
 const Pokemon = lazy(() => import('./pages/Pokemon/pokemon'));
@@ -32,7 +30,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Router>
-        <Suspense fallback={null}>
+        <Suspense fallback={<PageLoader/>}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/pokemon" element={<Pokemon/>} />
