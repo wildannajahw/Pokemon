@@ -9,11 +9,31 @@ export interface Types {
   };
 }
 
+export interface Stats{
+  base_stat: number;
+  stat: {
+    name: string;
+  };
+}
+
+export interface Abilities{
+  ability: {
+    name: string;
+  };
+}
+
+
+
 export interface Pokemon {
   id?: number;
   name: string;
   moves?: Moves[];
   types?: Types[];
+  stats?: Stats[];
+  abilities?: Abilities[];
+  weight?: number;
+  height?: number;
+  artwork?: string;
   image?: string;
   nickname?: string;
 }

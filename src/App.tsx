@@ -10,8 +10,9 @@ import palette from './theme/palette';
 // import List from './component/Pokemon/List';
 // import getTheme from './theme/theme';
 
-const Pokemon = lazy(() => import('./pages/pokemon'));
 const Home = lazy(() => import('./pages/home'));
+const Pokemon = lazy(() => import('./pages/Pokemon/pokemon'));
+const PokemonDetail = lazy(() => import('./pages/Pokemon/detail'));
 
 function App() {
   const { mode } = useSelector((state)=>state.theme);
@@ -35,6 +36,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/pokemon" element={<Pokemon/>} />
+            <Route path="/pokemon/:id" element={<PokemonDetail/>} />
           </Routes>
         </Suspense>
       </Router>

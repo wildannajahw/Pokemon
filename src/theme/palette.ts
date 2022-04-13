@@ -165,6 +165,81 @@ const COMMON = {
   },
 };
 
+// const pokemon = {
+//   bug: '#B1C12E',
+//   dark: '#4F3A2D',
+//   dragon: '#755EDF',
+//   electric: '#FCBC17',
+//   fairy: '#F4B1F4',
+//   fighting: '#823551D',
+//   fire: '#E73B0C',
+//   flying: '#A3B3F7',
+//   ghost: '#6060B2',
+//   grass: '#74C236',
+//   ground: '#D3B357',
+//   ice: '#A3E7FD',
+//   normal: '#C8C4BC',
+//   poison: '#934594',
+//   psychic: '#ED4882',
+//   rock: '#B9A156',
+//   steel: '#B5B5C3',
+//   water: '#3295F6',
+//   unknown: '#808080',
+//   shadow: '421C52'
+// }
+
+const background = {
+  bug: '#8BD674',
+  dark: '#6F6E78',
+  dragon: '#7383B9',
+  electric: '#F2CB55',
+  fairy: '#EBA8C3',
+  fighting: '#EB4971',
+  fire: '#FFA756',
+  flying: '#83A2E3',
+  ghost: '#8571BE',
+  grass: '#8BBE8A',
+  ground: '#F78551',
+  ice: '#91D8DF',
+  normal: '#B5B9C4',
+  poison: '#9F6E97',
+  psychic: '#FF6568',
+  rock: '#D4C294',
+  steel: '#4C91B2',
+  water: '#58ABF6',
+  unknown: '#808080',
+  shadow: '#421C52'
+
+}
+
+const type = {
+  bug: '#8cb230',
+  dark: '#58575F',
+  dragon: '#0F6AC0',
+  electric: '#EED535',
+  fairy: '#ED6EC7',
+  fighting: '#D04164',
+  fire: '#FD7D24',
+  flying: '#748FC9',
+  ghost: '#556AAE',
+  grass: '#62B957',
+  ground: '#DD7748',
+  ice: '#61CEC0',
+  normal: '#9DA0AA',
+  poison: '#A552CC',
+  psychic: '#EA5D60',
+  rock: '#BAAB82',
+  steel: '#417D9A',
+  water: '#4A90DA',
+  unknown: '808080',
+  shadow: '#421C52'
+
+}
+const pokemon = {
+  background,
+  type
+};
+
 const palette = {
   light: {
     ...COMMON,
@@ -172,6 +247,7 @@ const palette = {
     text: { primary: GREY[800], secondary: GREY[600], disabled: GREY[500] },
     background: { paper: GREY[200], default: '#fff', neutral: GREY[200] },
     action: { active: GREY[600], ...COMMON.action },
+    pokemon,
   },
   dark: {
     ...COMMON,
@@ -179,6 +255,7 @@ const palette = {
     text: { primary: '#fff', secondary: GREY[500], disabled: GREY[600] },
     background: { paper: GREY[800], default: GREY[900], neutral: GREY[500_16] },
     action: { active: GREY[500], ...COMMON.action },
+    pokemon,
   },
 } as const;
 

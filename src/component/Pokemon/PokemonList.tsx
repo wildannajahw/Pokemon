@@ -1,5 +1,6 @@
 import { Container } from '@mui/material';
 import React from 'react'
+import { Link } from 'react-router-dom';
 import { PokemonListProps } from './types';
 import PokemonCard from './PokemonCard';
 
@@ -13,11 +14,21 @@ function PokemonList({ pokemons }: PokemonListProps) {
         gridGap: '1rem',
       }}
     >
-      {pokemons?.map(({ name,image }) => {
+      {pokemons?.map(({ name,artwork,image,nickname }) => {
         const props= {
           name,
         };
-        return <PokemonCard {...props} image={image} />;
+        return (
+          <Link
+            key={nickname}
+            to={{
+              pathname: `/pokemon/${name}`,
+            }}
+            state={{ artwork }}
+          >
+          <PokemonCard {...props} image={image} />
+          </Link>
+        );
       })}
     </Container>
   )

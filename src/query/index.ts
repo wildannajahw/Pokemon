@@ -13,6 +13,7 @@ export const GET_POKEMONS = gql`
       results {
         url
         name
+        artwork
         image
       }
     }
@@ -24,19 +25,31 @@ export const GET_POKEMON = gql`
     pokemon(name: $name) {
       id
       name
-      sprites {
-        front_default
-      }
       abilities{
         ability{
           name
         }
       }
-      types {
-        type {
+      base_experience
+      moves{
+        move{
           name
         }
       }
+      stats{
+        base_stat
+        stat{
+          name
+        }
+      }
+      types{
+        type{
+          name
+        }
+      }
+      weight
+      height
+      
     }
   }
 `;

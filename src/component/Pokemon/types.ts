@@ -8,3 +8,7 @@ export interface PokemonCardProps {
   image?: string;
   name: string;
 }
+
+export interface PokemonCardLoaderProps {
+  length: number;
+}

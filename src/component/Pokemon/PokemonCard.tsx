@@ -13,13 +13,14 @@ function PokemonCard({
       display: 'flex',
       flexDirection: 'column',
       minHeight: '50px',
+      justifyContent: 'center'
      }}>
       <img
         src={image}
         alt={name}
         // sx={{
-        //   // width: "100px",
-        //   // height: "100px",
+          // width: "100px",
+          // height: "100px",
         //   position: "absolute",
         //   top: "50%",
         //   transform: "translateY(-50%)",
@@ -31,7 +32,9 @@ function PokemonCard({
           top: "50%",
           transform: "translateY(-50%)",
           right: 0,
-          bottom:0
+          bottom:0,
+          width: "100px",
+          height: "100px",
         }}
 
       />
