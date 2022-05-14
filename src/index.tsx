@@ -9,6 +9,7 @@ import { store } from './redux/store';
 // import App from './App';
 import App from './App';
 import offsetLimitPagination from './utils/offsetLimitPagination';
+import { PokemonProvider } from './context/PokemonContext';
 
 const client = new ApolloClient({
   uri: "https://graphql-pokeapi.vercel.app/api/graphql",
@@ -29,9 +30,11 @@ const client = new ApolloClient({
 ReactDOM.render(
   <React.StrictMode>
     <ReduxProvider store={store}>
-      <ApolloProvider client={client}>
-        <App />
-      </ApolloProvider>
+      <PokemonProvider>
+        <ApolloProvider client={client}>
+          <App />
+        </ApolloProvider>
+      </PokemonProvider>
     </ReduxProvider>
   </React.StrictMode>,
   document.getElementById('root')

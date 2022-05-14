@@ -10,6 +10,7 @@ import { GET_POKEMON } from "../../query";
 import { PokemonDetail,PokemonVars } from "../../query/types";
 import Page from "../../component/Page";
 import PokemonDetailLoader from "../../component/Pokemon/PokemonDetailLoader";
+import PokemonCatch from "../../component/Pokemon/PokemonCatch";
 
 type RouterParams = {
   id: string;
@@ -181,6 +182,9 @@ export default function Detail() {
   
             
           </Stack>
+          <Suspense fallback={null}>
+            {!!pokemon && <PokemonCatch name={id} image={pokeImage} />}
+          </Suspense>
   
         </Box> 
       )}
